@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="applicable-device" content="mobile"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta http-equiv="Cache-Control" content="no-transform"/>
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<title>TalkingData Base</title>
+		<link rel="stylesheet" href="css/public_head.css" />
+		<link rel="stylesheet" href="css/public_body.css" />
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/phone.js" ></script>
+		<script type="text/javascript" src="js/TalkingDataSDK.js"></script>
+		<script type="text/javascript" src="js/TalkingDataProfileType.js"></script>
+		<script type="text/javascript" src="js/TalkingDataGender.js"></script>
+		<script type="text/javascript" src="js/TalkingDataProfile.js"></script>
+		<script type="text/javascript" src="js/TalkingDataSearch.js"></script>
+	</head>
+	<body>
+		<div class="head_line">
+			<p class="head_line_p">
+				TalkingDataSDK
+			</p>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/base.png">获取TDID
+			</div>
+			<div class="wd_index">
+				<div class="wd_line">
+					<span>TDID</span>
+					<input id="tx_tdid" type="text" class="line_input" placeholder="TDID">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tdid" type="button" class="bottom_btn" value="获取TDID">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/base.png">获取OAID
+			</div>
+			<div class="wd_index">
+				<div class="wd_line">
+					<span>OAID</span>
+					<input id="tx_oaid" type="text" class="line_input" placeholder="OAID">
+				</div>
+				<div class="btn_line">
+					<input id="btn_oaid" type="button" class="bottom_btn" value="获取OAID">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/base.png">设置经纬度
+			</div>
+			<div class="wd_index">
+				<div class="wd_line">
+					<span>纬度</span>
+					<input id="tx_latitude" type="text" class="line_input" placeholder="纬度">
+				</div>
+				<div class="wd_line">
+					<span>经度</span>
+					<input id="tx_longitude" type="text" class="line_input" placeholder="经度">
+				</div>
+				<div class="btn_line">
+					<input id="btn_location" type="button" class="bottom_btn" value="设置经纬度">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/base.png">基础通用事件
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_deepLink" type="button" class="bottom_btn" value="唤醒">
+				</div>
+				<div class="btn_line">
+					<input id="btn_register" type="button" class="bottom_btn" value="注册">
+				</div>
+				<div class="btn_line">
+					<input id="btn_login" type="button" class="bottom_btn" value="登录">
+				</div>
+				<div class="btn_line">
+					<input id="btn_profileUpdate" type="button" class="bottom_btn" value="账户属性更新">
+				</div>
+				<div class="btn_line">
+					<input id="btn_createCard" type="button" class="bottom_btn" value="添加支付信息">
+				</div>
+				<div class="btn_line">
+					<input id="btn_favorite" type="button" class="bottom_btn" value="收藏">
+				</div>
+				<div class="btn_line">
+					<input id="btn_share" type="button" class="bottom_btn" value="分享">
+				</div>
+				<div class="btn_line">
+					<input id="btn_punch" type="button" class="bottom_btn" value="签到打卡">
+				</div>
+				<div class="btn_line">
+					<input id="btn_search" type="button" class="bottom_btn" value="搜索">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+			</div>
+			<div class="btn_line">
+				<input id="btn_back" type="button" class="bottom_btn" value="返回">
+			</div>
+		</div>
+		<script src="cordova.js"></script>
+		<script>
+			var getTDID = function(tdid){
+				$('#tx_tdid').val(tdid);
+			}
+			$('#btn_tdid').on('click', function(){
+				TalkingDataSDK.getDeviceId(getTDID);
+			});
+			var getOAID = function(oaid){
+				$('#tx_oaid').val(oaid);
+			}
+			$('#btn_oaid').on('click', function(){
+				TalkingDataSDK.getOAID(getOAID);
+			});
+			$('#btn_location').on('click', function(){
+				var latitude = $('#tx_latitude').val() * 1;
+				var longitude = $('#tx_longitude').val() * 1;
+				TalkingDataSDK.setLocation(latitude, longitude);
+			});
+			$('#btn_deepLink').on('click', function(){
+				TalkingDataSDK.onReceiveDeepLink("https://www.talkingdata.com");
+			});
+			$('#btn_register').on('click', function(){
+				var profile = TalkingDataProfile.createProfile();
+				profile.setName("name01");
+				profile.setType(TalkingDataProfileType.WEIXIN);
+				profile.setGender(TalkingDataGender.MALE);
+				profile.setAge(18);
+				profile.setProperty1("property1");
+				profile.setProperty2(2);
+				profile.setProperty3(3.14);
+				profile.setProperty4("property4");
+				profile.setProperty5("property5");
+				profile.setProperty6(0.618);
+				profile.setProperty7("property7");
+				profile.setProperty8("property8");
+				profile.setProperty9(9.8);
+				profile.setProperty10("property10");
+				TalkingDataSDK.onRegister("user01", profile, "123456");
+			});
+			$('#btn_login').on('click', function(){
+				var profile = TalkingDataProfile.createProfile();
+				profile.setName("name01");
+				profile.setType(TalkingDataProfileType.WEIXIN);
+				profile.setGender(TalkingDataGender.MALE);
+				profile.setAge(18);
+				profile.setProperty1("property1");
+				profile.setProperty2(2);
+				profile.setProperty3(3.14);
+				profile.setProperty4("property4");
+				profile.setProperty5("property5");
+				profile.setProperty6(0.618);
+				profile.setProperty7("property7");
+				profile.setProperty8("property8");
+				profile.setProperty9(9.8);
+				profile.setProperty10("property10");
+				TalkingDataSDK.onLogin("user01", profile);
+			});
+			$('#btn_profileUpdate').on('click', function(){
+				var profile = TalkingDataProfile.createProfile();
+				profile.setName("name01");
+				profile.setType(TalkingDataProfileType.WEIXIN);
+				profile.setGender(TalkingDataGender.MALE);
+				profile.setAge(18);
+				profile.setProperty1("property1");
+				profile.setProperty2(2);
+				profile.setProperty3(3.14);
+				profile.setProperty4("property4");
+				profile.setProperty5("property5");
+				profile.setProperty6(0.618);
+				profile.setProperty7("property7");
+				profile.setProperty8("property8");
+				profile.setProperty9(9.8);
+				profile.setProperty10("property10");
+				TalkingDataSDK.onProfileUpdate(profile);
+			});
+			$('#btn_createCard').on('click', function(){
+				TalkingDataSDK.onCreateCard("user01", "card", "6201234567891011");
+			});
+			$('#btn_favorite').on('click', function(){
+				TalkingDataSDK.onFavorite("书单", "西游记");
+			});
+			$('#btn_share').on('click', function(){
+				TalkingDataSDK.onShare("user01", "读书清单");
+			});
+			$('#btn_punch').on('click', function(){
+				TalkingDataSDK.onPunch("user01", "punch01");
+			});
+			$('#btn_search').on('click', function(){
+				var search = TalkingDataSearch.createSearch();
+				search.setCategory("服装类");
+				search.setContent("2021新款");
+				TalkingDataSDK.onSearch(search);
+			});
+			$('#btn_back').on("click", function(){
+				window.history.back();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="applicable-device" content="mobile" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta http-equiv="Cache-Control" content="no-transform" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<title>TalkingData Industry</title>
+		<link rel="stylesheet" href="css/public_head.css" />
+		<link rel="stylesheet" href="css/public_body.css" />
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/phone.js"></script>
+		<script type="text/javascript" src="js/TalkingDataSDK.js"></script>
+		<script type="text/javascript" src="js/TalkingDataSearch.js"></script>
+		<script type="text/javascript" src="js/TalkingDataShoppingCart.js"></script>
+		<script type="text/javascript" src="js/TalkingDataOrder.js"></script>
+		<script type="text/javascript" src="js/TalkingDataTransaction.js"></script>
+	</head>
+	<body>
+		<div class="head_line">
+			<p class="head_line_p">
+				TalkingDataSDK
+			</p>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">电商零售
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_retail_search" type="button" class="bottom_btn" value="搜索">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_contact" type="button" class="bottom_btn" value="联系">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_chargeBack" type="button" class="bottom_btn" value="退单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_booking" type="button" class="bottom_btn" value="预订">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_viewItem" type="button" class="bottom_btn" value="查看商品">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_addItemToShoppingCart" type="button" class="bottom_btn" value="添加到购物车">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_viewShoppingCart" type="button" class="bottom_btn" value="查看购物车">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_placeOrder" type="button" class="bottom_btn" value="下订单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_orderPay" type="button" class="bottom_btn" value="支付订单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_cancelOrder" type="button" class="bottom_btn" value="取消订单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_retail_trialFinished" type="button" class="bottom_btn" value="完成试用体验">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">游戏娱乐
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_game_pay" type="button" class="bottom_btn" value="付费">
+				</div>
+				<div class="btn_line">
+					<input id="btn_game_createRole" type="button" class="bottom_btn" value="创建角色">
+				</div>
+				<div class="btn_line">
+					<input id="btn_game_levelPass" type="button" class="bottom_btn" value="通过关卡">
+				</div>
+				<div class="btn_line">
+					<input id="btn_game_guideFinished" type="button" class="bottom_btn" value="完成新手教程">
+				</div>
+				<div class="btn_line">
+					<input id="btn_game_achievementUnlock" type="button" class="bottom_btn" value="解锁成就">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">金融借贷
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_finance_contact" type="button" class="bottom_btn" value="联系">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_chargeBack" type="button" class="bottom_btn" value="退单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_reservation" type="button" class="bottom_btn" value="预约">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_credit" type="button" class="bottom_btn" value="授信">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_transaction" type="button" class="bottom_btn" value="交易">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_browse" type="button" class="bottom_btn" value="浏览详情">
+				</div>
+				<div class="btn_line">
+					<input id="btn_finance_trialFinished" type="button" class="bottom_btn" value="完成试用体验">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">旅游出行
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_tour_search" type="button" class="bottom_btn" value="搜索">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_contact" type="button" class="bottom_btn" value="联系">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_pay" type="button" class="bottom_btn" value="付费">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_chargeBack" type="button" class="bottom_btn" value="退单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_booking" type="button" class="bottom_btn" value="预订">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_browse" type="button" class="bottom_btn" value="浏览详情">
+				</div>
+				<div class="btn_line">
+					<input id="btn_tour_trialFinished" type="button" class="bottom_btn" value="完成试用体验">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">在线教育
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_edu_contact" type="button" class="bottom_btn" value="联系">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_pay" type="button" class="bottom_btn" value="付费">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_chargeBack" type="button" class="bottom_btn" value="退单">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_reservation" type="button" class="bottom_btn" value="预约">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_learn" type="button" class="bottom_btn" value="课程学习">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_previewFinished" type="button" class="bottom_btn" value="完成课程试听">
+				</div>
+				<div class="btn_line">
+					<input id="btn_edu_achievementUnlock" type="button" class="bottom_btn" value="解锁成就">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">小说阅读
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_reading_pay" type="button" class="bottom_btn" value="付费">
+				</div>
+				<div class="btn_line">
+					<input id="btn_reading_read" type="button" class="bottom_btn" value="文章阅读">
+				</div>
+				<div class="btn_line">
+					<input id="btn_reading_freeFinished" type="button" class="bottom_btn" value="完成免费阅读">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/industry.png">其他行业
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_other_pay" type="button" class="bottom_btn" value="付费">
+				</div>
+				<div class="btn_line">
+					<input id="btn_other_browse" type="button" class="bottom_btn" value="浏览详情">
+				</div>
+				<div class="btn_line">
+					<input id="btn_other_trialFinished" type="button" class="bottom_btn" value="完成试用体验">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+			</div>
+			<div class="btn_line">
+				<input id="btn_back" type="button" class="bottom_btn" value="返回">
+			</div>
+		</div>
+		<script src="cordova.js"></script>
+		<script>
+			$('#btn_retail_search').on('click', function(){
+				var search = TalkingDataSearch.createSearch();
+				search.setCategory("服装类");
+				search.setContent("2021新款");
+				search.setItemId("123456");
+				search.setItemLocationId("456789");
+				TalkingDataSDK.onSearch(search);
+			});
+			$('#btn_retail_contact').on('click', function(){
+				TalkingDataSDK.onContact("user01", "联系店铺");
+			});
+			$('#btn_retail_chargeBack').on('click', function(){
+				TalkingDataSDK.onChargeBack("user01", "order01", "缺货", "仅退款");
+			});
+			$('#btn_retail_booking').on('click', function(){
+				TalkingDataSDK.onBooking("user01", "booking01", "服装类", 1000, "2021新款");
+			});
+			$('#btn_retail_viewItem').on('click', function(){
+				TalkingDataSDK.onViewItem("item01", "手机", "华为 P50", 748800);
+			});
+			$('#btn_retail_addItemToShoppingCart').on('click', function(){
+				TalkingDataSDK.onAddItemToShoppingCart("item02", "电脑", "MacBook Pro", 1899900, 1);
+			});
+			$('#btn_retail_viewShoppingCart').on('click', function(){
+				var shoppingCart = TalkingDataShoppingCart.createShoppingCart();
+				shoppingCart.addItem("item01", "手机", "华为 P50", 748800, 2);
+				shoppingCart.addItem("item02", "电脑", "MacBook Pro", 1899900, 1);
+				TalkingDataSDK.onViewShoppingCart(shoppingCart);
+			});
+			$('#btn_retail_placeOrder').on('click', function(){
+				var order = TalkingDataOrder.createOrder("order01", 3397500, "CNY");
+				order.addItem("item01", "手机", "华为 P50", 748800, 2);
+				order.addItem("item02", "电脑", "MacBook Pro", 1899900, 1);
+				TalkingDataSDK.onPlaceOrder(order, "user01");
+			});
+			$('#btn_retail_orderPay').on('click', function(){
+				var order = TalkingDataOrder.createOrder("order01", 3397500, "CNY");
+				order.addItem("item01", "手机", "华为 P50", 748800, 2);
+				order.addItem("item02", "电脑", "MacBook Pro", 1899900, 1);
+				TalkingDataSDK.onOrderPaySucc(order, "WeChat", "user01");
+			});
+			$('#btn_retail_cancelOrder').on('click', function(){
+				var order = TalkingDataOrder.createOrder("order01", 3397500, "CNY");
+				order.addItem("item01", "手机", "华为 P50", 748800, 2);
+				order.addItem("item02", "电脑", "MacBook Pro", 1899900, 1);
+				TalkingDataSDK.onCancelOrder(order);
+			});
+			$('#btn_retail_trialFinished').on('click', function(){
+				TalkingDataSDK.onTrialFinished("user01", "试用体验结束");
+			});
+			$('#btn_game_pay').on('click', function(){
+				TalkingDataSDK.onPay("user01", "order02", 1077600, "CNY", "Alipay", null, 0);
+			});
+			$('#btn_game_createRole').on('click', function(){
+				TalkingDataSDK.onCreateRole("role01");
+			});
+			$('#btn_game_levelPass').on('click', function(){
+				TalkingDataSDK.onLevelPass("user01", "99");
+			});
+			$('#btn_game_guideFinished').on('click', function(){
+				TalkingDataSDK.onGuideFinished("user01", "新手教程");
+			});
+			$('#btn_game_achievementUnlock').on('click', function(){
+				TalkingDataSDK.onAchievementUnlock("user01", "achievement01");
+			});
+			$('#btn_finance_contact').on('click', function(){
+				TalkingDataSDK.onContact("user01", "理财咨询");
+			});
+			$('#btn_finance_chargeBack').on('click', function(){
+				TalkingDataSDK.onChargeBack("user01", "order03", "更换产品", "犹豫期退单");
+			});
+			$('#btn_finance_reservation').on('click', function(){
+				TalkingDataSDK.onReservation("user01", "reservation01", "货币基金", 1000000, "202118期");
+			});
+			$('#btn_finance_credit').on('click', function(){
+				TalkingDataSDK.onCredit("user01", 100000, "酒店");
+			});
+			$('#btn_finance_transaction').on('click', function(){
+				var transaction = TalkingDataTransaction.createTransaction();
+				transaction.setTransactionId("transaction01");
+				transaction.setCategory("定期存款");
+				transaction.setAmount(1000000);
+				transaction.setPersonA("甲方");
+				transaction.setPersonB("乙方");
+				transaction.setStartDate(1631234567890);
+				transaction.setEndDate(1631234567890);
+				transaction.setCurrencyType("CNY");
+				transaction.setContent("一年期");
+				TalkingDataSDK.onTransaction("user01", transaction);
+			});
+			$('#btn_finance_browse').on('click', function(){
+				TalkingDataSDK.onBrowse("user01", "详情页", 1631234567890, 1000);
+			});
+			$('#btn_finance_trialFinished').on('click', function(){
+				TalkingDataSDK.onTrialFinished("user01", "体验金");
+			});
+			$('#btn_tour_search').on('click', function(){
+				var search = TalkingDataSearch.createSearch();
+				search.setCategory("景点");
+				search.setContent("游乐园");
+				search.setDestination("上海");
+				search.setOrigin("北京");
+				search.setStartDate(1631234567890);
+				search.setEndDate(1631234567890);
+				TalkingDataSDK.onSearch(search);
+			});
+			$('#btn_tour_contact').on('click', function(){
+				TalkingDataSDK.onContact("user01", "联系店家");
+			});
+			$('#btn_tour_pay').on('click', function(){
+				TalkingDataSDK.onPay("user01", "order04", 89900, "CNY", "ApplePay", null, 0);
+			});
+			$('#btn_tour_chargeBack').on('click', function(){
+				TalkingDataSDK.onChargeBack("user01", "order04", "航班取消", "退款");
+			});
+			$('#btn_tour_booking').on('click', function(){
+				TalkingDataSDK.onBooking("user01", "booking02", "酒店", 1000, "标准间");
+			});
+			$('#btn_tour_browse').on('click', function(){
+				TalkingDataSDK.onBrowse("user01", "景点介绍", 1631234567890, 110);
+			});
+			$('#btn_tour_trialFinished').on('click', function(){
+				TalkingDataSDK.onTrialFinished("user01", "新户体验");
+			});
+			$('#btn_edu_contact').on('click', function(){
+				TalkingDataSDK.onContact("user01", "联系老师");
+			});
+			$('#btn_edu_pay').on('click', function(){
+				TalkingDataSDK.onPay("user01", "order05", 366600, "CNY", "UnionPay", null, 0);
+			});
+			$('#btn_edu_chargeBack').on('click', function(){
+				TalkingDataSDK.onChargeBack("user01", "order05", "客户原因", "退余款");
+			});
+			$('#btn_edu_reservation').on('click', function(){
+				TalkingDataSDK.onReservation("user01", "reservation02", "成人教育", 150000, "10课时");
+			});
+			$('#btn_edu_learn').on('click', function(){
+				TalkingDataSDK.onLearn("user01", "计算机基础第一课", 1631234567890, 3600);
+			});
+			$('#btn_edu_previewFinished').on('click', function(){
+				TalkingDataSDK.onPreviewFinished("user01", "课程试听");
+			});
+			$('#btn_edu_achievementUnlock').on('click', function(){
+				 TalkingDataSDK.onAchievementUnlock("user01", "achievement02");
+			});
+			$('#btn_reading_pay').on('click', function(){
+				TalkingDataSDK.onPay("user01", "order06", 100, "CNY", "WeChat", null, 0);
+			});
+			$('#btn_reading_read').on('click', function(){
+				TalkingDataSDK.onRead("user01", "西游记第一章", 1631234567890, 1230);
+			});
+			$('#btn_reading_freeFinished').on('click', function(){
+				TalkingDataSDK.onFreeFinished("user01", "第一章");
+			});
+			$('#btn_other_pay').on('click', function(){
+				TalkingDataSDK.onPay("user01", "order07", 10000, "CNY", "Alipay", null, 0);
+			});
+			$('#btn_other_browse').on('click', function(){
+				TalkingDataSDK.onBrowse("user01", "详情页", 1631234567890, 110);
+			});
+			$('#btn_other_trialFinished').on('click', function(){
+				TalkingDataSDK.onTrialFinished("user01", "试用体验");
+			});
+			$('#btn_back').on("click", function(){
+				window.history.back();
+			});
+		</script>
+	</body>
+</html>

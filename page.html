@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="applicable-device" content="mobile"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta http-equiv="Cache-Control" content="no-transform"/>
+		<meta http-equiv="Cache-Control" content="no-siteapp"/>
+		<title>TalkingData Page</title>
+		<link rel="stylesheet" href="css/public_head.css" />
+		<link rel="stylesheet" href="css/public_body.css" />
+		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/phone.js" ></script>
+		<script type="text/javascript" src="js/TalkingDataSDK.js"></script>
+		<script type="text/javascript">
+			(function() {
+				TalkingDataSDK.onPageBegin("page");
+			})();
+		</script>
+	</head>
+	<body>
+		<div class="head_line">
+			<p class="head_line_p">
+				TalkingDataSDK
+			</p>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+				<img src="images/page.png">页面统计
+			</div>
+			<div class="wd_index">
+				<div class="btn_line">
+					<input id="btn_page1" type="button" class="bottom_btn" value="跳转至新页面1">
+				</div>
+				<div class="btn_line">
+					<input id="btn_page2" type="button" class="bottom_btn" value="跳转至新页面2">
+				</div>
+			</div>
+		</div>
+		<div class="new_index">
+			<div class="wd_title">
+			</div>
+			<div class="btn_line">
+				<input id="btn_back" type="button" class="bottom_btn" value="返回">
+			</div>
+		</div>
+		<script src="cordova.js"></script>
+		<script>
+			$('#btn_page1').on('click', function(){
+				TalkingDataSDK.onPageEnd("page");
+				TalkingDataSDK.onPageBegin("page1");
+				window.location.href = 'page1.html';
+			});
+			$('#btn_page2').on('click', function(){
+				TalkingDataSDK.onPageEnd("page");
+				TalkingDataSDK.onPageBegin("page2");
+				window.location.href = 'page2.html';
+			});
+			$('#btn_back').on("click", function(){
+				TalkingDataSDK.onPageEnd("page");
+				window.history.back();
+			});
+		</script>
+	</body>
+</html>
