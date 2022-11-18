@@ -32,10 +32,6 @@
 					<input id="tx_id" type="text" class="line_input" placeholder="Event ID">
 				</div>
 				<div class="wd_line">
-					<span>事件数值</span>
-					<input id="tx_number" type="text" class="line_input" placeholder="Value值">
-				</div>
-				<div class="wd_line">
 					<span>事件参数</span>
 					<input id="tx_key1" type="text" class="line_input" placeholder="key1">
 				</div>
@@ -85,7 +81,6 @@
 		<script>
 			$('#btn_event').on('click', function(){
 				var eventId = $('#tx_id').val();
-				var eventValue = $('#tx_number').val() * 1;
 				var dataKey1 = $('#tx_key1').val();
 				var dataValue1 = $('#tx_value1').val();
 				var dataKey2 = $('#tx_key2').val();
@@ -100,7 +95,7 @@
 				if (dataKey2.length > 0 && dataValue2.length > 0) {
 					eventData[dataKey2] = dataValue2;
 				}
-				TalkingDataSDK.onEvent(eventId, eventValue, eventData);
+				TalkingDataSDK.onEvent(eventId, eventData);
 			});
 			$('#btn_set').on("click", function(){
 				var key = $('#tx_key').val();
