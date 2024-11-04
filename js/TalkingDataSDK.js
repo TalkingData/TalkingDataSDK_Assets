@@ -37,6 +37,17 @@ function exec(funName, args) {
 };
 
 var TalkingDataSDK = {
+    /**
+     * 配置SDK收集规则
+     * @param {boolean} IMEIAndMEIDEnabled  : 允许收集IMEI和MEID
+     * @param {boolean} MACEnabled          : 允许收集MAC
+     * @param {boolean} AppListEnabled      : 允许收集应用列表
+     * @param {boolean} LocationEnabled     : 允许收集位置信息
+     * @param {boolean} WifiEnabled         : 允许收集网络信息
+     */
+    setConfig(IMEIAndMEIDEnabled, MACEnabled, AppListEnabled, LocationEnabled, WifiEnabled) {
+        exec("setConfig", [IMEIAndMEIDEnabled, MACEnabled, AppListEnabled, LocationEnabled, WifiEnabled]);
+    },
     
     /**
      * TalkingData SDK初始化方法。
@@ -44,8 +55,15 @@ var TalkingDataSDK = {
      * @param {string} channelId        : 渠道名（可选）。如“AppStore”
      * @param {string} custom           : 自定义参数（可选）。
      */
-    init: function(appId, channelId, custom) {
-        exec("init", [appId, channelId, custom]);
+    initSDK: function(appId, channelId, custom) {
+        exec("initSDK", [appId, channelId, custom]);
+    },
+    
+    /**
+     * SDK启动分析
+     */
+    startA: function() {
+        exec("startA", []);
     },
     
     /**
@@ -125,20 +143,22 @@ var TalkingDataSDK = {
      * @param {string}  profileId       : 用户账号
      * @param {object}  profile         : 账户属性
      * @param {string}  invitationCode  : 邀请码
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onRegister: function(profileId, profile, invitationCode) {
+    onRegister: function(profileId, profile, invitationCode, eventValue) {
         var profileJson = JSON.stringify(profile);
-        exec("onRegister", [profileId, profileJson, invitationCode]);
+        exec("onRegister", [profileId, profileJson, invitationCode, eventValue]);
     },
     
     /**
      * 登录
      * @param {string}  profileId       : 用户账号
      * @param {object}  profile         : 账户属性
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onLogin: function(profileId, profile) {
+    onLogin: function(profileId, profile, eventValue) {
         var profileJson = JSON.stringify(profile);
-        exec("onLogin", [profileId, profileJson]);
+        exec("onLogin", [profileId, profileJson, eventValue]);
     },
     
     /**
@@ -164,18 +184,20 @@ var TalkingDataSDK = {
      * 收藏
      * @param {string}  category        : 收藏类别
      * @param {string}  content         : 收藏内容
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onFavorite: function(category, content) {
-        exec("onFavorite", [category, content]);
+    onFavorite: function(category, content, eventValue) {
+        exec("onFavorite", [category, content, eventValue]);
     },
     
     /**
      * 分享
      * @param {string}  profileId       : 用户账号
      * @param {string}  content         : 分享内容
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onShare: function(profileId, content) {
-        exec("onShare", [profileId, content]);
+    onShare: function(profileId, content, eventValue) {
+        exec("onShare", [profileId, content, eventValue]);
     },
     
     /**
@@ -260,9 +282,10 @@ var TalkingDataSDK = {
      * @param {string}  category        : 商品类别
      * @param {string}  name            : 商品名称
      * @param {number}  unitPrice       : 商品单价
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onViewItem: function(itemId, category, name, unitPrice) {
-        exec("onViewItem", [itemId, category, name, unitPrice]);
+    onViewItem: function(itemId, category, name, unitPrice, eventValue) {
+        exec("onViewItem", [itemId, category, name, unitPrice, eventValue]);
     },
     
     /**
@@ -272,9 +295,10 @@ var TalkingDataSDK = {
      * @param {string}  name            : 商品名称
      * @param {number}  unitPrice       : 商品单价
      * @param {number}  amount          : 商品数量
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onAddItemToShoppingCart: function(itemId, category, name, unitPrice, amount) {
-        exec("onAddItemToShoppingCart", [itemId, category, name, unitPrice, amount]);
+    onAddItemToShoppingCart: function(itemId, category, name, unitPrice, amount, eventValue) {
+        exec("onAddItemToShoppingCart", [itemId, category, name, unitPrice, amount, eventValue]);
     },
     
     /**
@@ -290,10 +314,11 @@ var TalkingDataSDK = {
      * 下订单
      * @param {object}  order           : 订单详情
      * @param {string}  profileId       : 用户账号
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onPlaceOrder: function(order, profileId) {
+    onPlaceOrder: function(order, profileId, eventValue) {
         var orderJson = JSON.stringify(order);
-        exec("onPlaceOrder", [orderJson, profileId]);
+        exec("onPlaceOrder", [orderJson, profileId, eventValue]);
     },
     
     /**
@@ -435,9 +460,10 @@ var TalkingDataSDK = {
      * 触发自定义事件
      * @param {string}  eventId         : 自定义事件的ID
      * @param {object}  eventData       : 自定义事件的数据，Json格式
+     * @param {object}  eventValue      : 用户自定义事件参数
      */
-    onEvent: function(eventId, eventData) {
-        exec("onEvent", [eventId, eventData]);
+    onEvent: function(eventId, eventData, eventValue) {
+        exec("onEvent", [eventId, eventData, eventValue]);
     },
     
     /**

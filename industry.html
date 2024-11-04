@@ -12,7 +12,7 @@
 		<title>TalkingData Industry</title>
 		<link rel="stylesheet" href="css/public_head.css" />
 		<link rel="stylesheet" href="css/public_body.css" />
-		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/phone.js"></script>
 		<script type="text/javascript" src="js/TalkingDataSDK.js"></script>
 		<script type="text/javascript" src="js/TalkingDataSearch.js"></script>
@@ -231,10 +231,16 @@
 				TalkingDataSDK.onBooking("user01", "booking01", "服装类", 1000, "2021新款");
 			});
 			$('#btn_retail_viewItem').on('click', function(){
-				TalkingDataSDK.onViewItem("item01", "手机", "华为 P50", 748800);
+				var eventValue = {
+					key : "value"
+				};
+				TalkingDataSDK.onViewItem("item01", "手机", "华为 P50", 748800, eventValue);
 			});
 			$('#btn_retail_addItemToShoppingCart').on('click', function(){
-				TalkingDataSDK.onAddItemToShoppingCart("item02", "电脑", "MacBook Pro", 1899900, 1);
+				var eventValue = {
+					key : "value"
+				};
+				TalkingDataSDK.onAddItemToShoppingCart("item02", "电脑", "MacBook Pro", 1899900, 1, eventValue);
 			});
 			$('#btn_retail_viewShoppingCart').on('click', function(){
 				var shoppingCart = TalkingDataShoppingCart.createShoppingCart();
@@ -246,7 +252,10 @@
 				var order = TalkingDataOrder.createOrder("order01", 3397500, "CNY");
 				order.addItem("item01", "手机", "华为 P50", 748800, 2);
 				order.addItem("item02", "电脑", "MacBook Pro", 1899900, 1);
-				TalkingDataSDK.onPlaceOrder(order, "user01");
+				var eventValue = {
+					key : "value"
+				};
+				TalkingDataSDK.onPlaceOrder(order, "user01", eventValue);
 			});
 			$('#btn_retail_orderPay').on('click', function(){
 				var order = TalkingDataOrder.createOrder("order01", 3397500, "CNY");

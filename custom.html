@@ -12,7 +12,7 @@
 		<title>TalkingData Custom</title>
 		<link rel="stylesheet" href="css/public_head.css" />
 		<link rel="stylesheet" href="css/public_body.css" />
-		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/phone.js" ></script>
 		<script type="text/javascript" src="js/TalkingDataSDK.js"></script>
 	</head>
@@ -95,7 +95,10 @@
 				if (dataKey2.length > 0 && dataValue2.length > 0) {
 					eventData[dataKey2] = dataValue2;
 				}
-				TalkingDataSDK.onEvent(eventId, eventData);
+				var eventValue = {
+					key : "value"
+				};
+				TalkingDataSDK.onEvent(eventId, eventData, eventValue);
 			});
 			$('#btn_set').on("click", function(){
 				var key = $('#tx_key').val();
